@@ -1,0 +1,46 @@
+import java.io.File;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+
+public class JavaToXml {
+		
+		 public static void main(String[] args) {  
+			  
+			  // creating Dictionar object  
+			   Dictionary dict=new Dictionary();    
+			   dict.setWord("sameer");	
+			   dict.setMeaning("an entertaining conpanion");
+			   // Creating listOfStates  
+			
+			    
+			     
+			  try {  
+			  
+			   // create JAXB context and initializing Marshaller  
+			   JAXBContext jaxbContext = JAXBContext.newInstance(Dictionary.class);  
+			   Marshaller jaxbMarshaller = jaxbContext.createMarshaller();  
+			  
+			   // for getting nice formatted output  
+			   jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);  
+			  
+			   //specify the location and name of xml file to be created  
+			   File XMLfile = new File("Output\\Dict.xml");  
+			     
+			   // Writing to XML file  
+			   jaxbMarshaller.marshal(dict, XMLfile);   
+			   // Writing to console  
+			   jaxbMarshaller.marshal(dict, System.out);   
+			    
+			  } catch (JAXBException e) {  
+			   // some exception occured  
+			   e.printStackTrace();  
+			  }  
+			  
+			 }
+
+
+	}
+

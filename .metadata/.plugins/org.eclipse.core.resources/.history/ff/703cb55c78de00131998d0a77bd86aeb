@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class DictionaryList {
+	
+	private ArrayList<Dictionary> dictionaries;
+
+	public ArrayList<Dictionary> getDictionaries() {
+		return dictionaries;
+	}
+	@XmlElement
+	public void setDictionaries(ArrayList<Dictionary> dictionaries) {
+		this.dictionaries = dictionaries;
+	}
+	
+
+}

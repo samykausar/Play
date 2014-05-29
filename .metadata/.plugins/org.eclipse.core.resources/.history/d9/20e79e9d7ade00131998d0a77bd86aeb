@@ -1,0 +1,25 @@
+package org.saneer.dictionary;
+import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class DictionaryList {
+	
+	private ArrayList<Dictionary> dictionaries;
+
+	public ArrayList<Dictionary> getDictionaries() {
+		return dictionaries;
+	}
+	// XmLElementWrapper generates a wrapper element around XML representation  
+	@XmlElementWrapper(name = "Dictionaries")  
+	// XmlElement sets the name of the entities in collection  
+	@XmlElement(name = "dictionary")  
+	public void setDictionaries(ArrayList<Dictionary> dictionaries) {
+		this.dictionaries = dictionaries;
+	}
+	
+
+}

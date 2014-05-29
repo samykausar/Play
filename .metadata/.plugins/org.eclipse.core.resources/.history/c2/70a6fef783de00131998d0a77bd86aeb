@@ -1,0 +1,44 @@
+package org.sameer.dictionary;
+import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement
+@XmlType(propOrder = {"name","description","author"})
+public class DictionaryList {
+	
+	final private static String name = "Webster's 1913 Dictionary Modified XML";
+	final private static String description = "Copyright: Public domain; Version: 1.0";
+	final private static String author = "Sameer Kausar";
+	
+	private ArrayList<Dictionary> dictionaries;
+
+	public ArrayList<Dictionary> getDictionaries() {
+		return dictionaries;
+	}
+	
+	public static String getName() {
+		return name;
+	}
+
+	public static String getDescription() {
+		return description;
+	}
+
+	public static String getAuthor() {
+		return author;
+	}
+
+	// XmLElementWrapper generates a wrapper element around XML representation  
+	//@XmlElementWrapper(name = "Dictionaries")  
+	// XmlElement sets the name of the entities in collection  
+	@XmlElement(name = "dictionary")  
+	public void setDictionaries(ArrayList<Dictionary> dictionaries) {
+		this.dictionaries = dictionaries;
+	}
+	
+
+}

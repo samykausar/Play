@@ -1,0 +1,26 @@
+package org.sameer.dictionary.model;
+
+import java.util.ArrayList;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.sameer.dictionary.XmlToJava;
+import org.sameer.dictionary.model.Dictionary;
+
+public class PersistDictionary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+        SessionFactory sessFact = HibernateUtil.getSessionFactory();
+        Session session = sessFact.getCurrentSession();
+        org.hibernate.Transaction tr = session.beginTransaction();
+        Dictionary dict1= new Dictionary("sameer","an entertaining companion"); 
+        ArrayList<Dictionary>= XmlToJava.getDictionaryList();
+        session.save(dict1);
+        tr.commit();
+        System.out.println("Successfully inserted");
+        sessFact.close();
+	}
+
+}

@@ -1,0 +1,60 @@
+package org.saneer.dictionary;
+import java.io.File;
+import java.util.ArrayList;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+
+public class JavaToXml {
+		
+		 public static void main(String[] args) {  
+			  
+			  // creating Dictionar object  
+			   Dictionary dict1=new Dictionary();    
+			   dict1.setWord("sameer");	
+			   dict1.setMeaning("an entertaining conpanion");			 
+			   // creating Dictionar object  
+			   Dictionary dict2=new Dictionary();    
+			   dict2.setWord("arshan");	
+			   dict2.setMeaning("asmaan ki shaan");
+			   // Creating listOfDictionaries
+			   
+			   ArrayList<Dictionary> dictionaries = new ArrayList<>();
+			   dictionaries.add(dict1);
+			   dictionaries.add(dict2);
+			   DictionaryList dictList = new DictionaryList();
+			   dictList.setDictionaries(dictionaries);
+			
+			   
+			
+			    
+			     
+			  try {  
+			  
+			   // create JAXB context and initializing Marshaller  
+			   JAXBContext jaxbContext = JAXBContext.newInstance(Dictionary.class);  
+			   Marshaller jaxbMarshaller = jaxbContext.createMarshaller();  
+			  
+			   // for getting nice formatted output  
+			   jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);  
+			  
+			   //specify the location and name of xml file to be created  
+			   File XMLfile = new File("Output\\Dict.xml");  
+			     
+			   // Writing to XML file  
+			   jaxbMarshaller.marshal(dictionaries, XMLfile);   
+			   // Writing to console  
+			   jaxbMarshaller.marshal(dictionaries, System.out);   
+			    
+			  } catch (JAXBException e) {  
+			   // some exception occured  
+			   e.printStackTrace();  
+			  }  
+			  
+			 }
+
+
+	}
+

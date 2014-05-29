@@ -1,0 +1,5 @@
+package org.sameer.dictionary.model;
+
+public class HibernateUtil {
+
+}

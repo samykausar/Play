@@ -1,0 +1,51 @@
+package org.sameer.dictionary;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+import org.codehaus.jackson.map.ObjectMapper;
+
+public class XmlToJson {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DictionaryList dictList =XmlToJava.getDictionaryList();
+       	ArrayList<Dictionary> dictionaries = dictList.getDictionaries();
+
+		Collections.sort(dictionaries, new Comparator<Dictionary>() {
+	        
+	        public int compare(Dictionary  dict1, Dictionary  dict2)
+	        {
+
+	            return  dict1.getWord().compareToIgnoreCase(dict2.getWord());
+	        }
+	    });
+		HashMap<String, String> dictionaryMap = new HashMap<String, String>();
+		ObjectMapper mapper = new ObjectMapper();
+
+
+	
+			
+			for (Dictionary dictionary : dictionaries) {
+				dictionaryMap.put(dictionary.getWord(), dictionary.getMeaning());				
+		
+
+		try {
+	 
+			// write JSON to a file
+			mapper.writeValue(new File("Output\\Dictionary.json"), dictionaryMap);
+	 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

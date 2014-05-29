@@ -1,0 +1,48 @@
+package org.sameer.dictionary.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="english")
+public class Dictionary {
+	
+    @Id
+    @GeneratedValue
+    @Column(name="id")
+	private int id;
+    @Column(name="word")
+	private String word;
+    @Column(name="meaning")
+	private String meaning;
+	
+	public Dictionary() {
+		super();
+	}
+	
+	public Dictionary(String word, String meaning) {
+		super();
+		this.word = word;
+		this.meaning = meaning;
+	}
+	public String getWord() {
+		return word;
+	}
+	
+	public void setWord(String word) {
+		this.word = word;
+	}
+	public String getMeaning() {
+		return meaning;
+	}
+	
+	public void setMeaning(String meaning) {
+		this.meaning = meaning;
+	}
+	
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.126
+C:\Users\sameer_kausar\workspaces\Play\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1103038900.index
+\DictionaryServices\src\main\java
+C:\Users\sameer_kausar\workspaces\Play\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3246765454.index
+\DictionaryService\src\main\resources
+C:\Users\sameer_kausar\workspaces\Play\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2422240125.index
+\DictionaryServices\src\main\resources

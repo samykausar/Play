@@ -1,0 +1,31 @@
+package org.sameer.dictionary;
+import java.io.File;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+
+public class XmlToJava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try{
+			// create JAXB context and initializing Marshaller
+			JAXBContext jaxbContext = JAXBContext.newInstance(Dictionary.class);
+			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+			
+			// specify the location and name of xml file to be read  
+			File XMLfile = new File("Input\\Dictionary.xml");
+			
+			 // this will create Java object - country from the XML file  
+			Dictionary dict = (Dictionary) jaxbUnmarshaller.unmarshal(XMLfile);
+			System.out.println("Word: "+dict.getWord());
+			System.out.println("Meaning: "+dict.getMeaning());
+		}
+		catch(JAXBException e){
+			e.printStackTrace();
+		}
+	}
+
+}

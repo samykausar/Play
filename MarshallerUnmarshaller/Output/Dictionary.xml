@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dictionaryList xmlns:ns2="org.sameer.dictionary.DictionaryList">
+    <name>Webster's 1913 Dictionary Modified XML By Sameer Kausar</name>
+    <description>Copyright: Public domain; Version: 1.0</description>
+    <author>Sameer Kausar</author>
+    <dictionary>
+        <word>sameer</word>
+        <meaning>an entertaining companion</meaning>
+    </dictionary>
+    <dictionary>
+        <word>arshan</word>
+        <meaning>asmaan ki shaan</meaning>
+    </dictionary>
+</dictionaryList>
